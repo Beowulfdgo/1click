@@ -8,6 +8,16 @@ A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
 
 The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
+## Requisitos versiones 
+
+Version PHP: 8.0.12
+Version CakePHP: 4.3.10
+Version pgadmin4: 6.4
+Version composer: 2.2.6
+Version postgres: 14.2
+
+
+
 ## Installation
 
 1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
