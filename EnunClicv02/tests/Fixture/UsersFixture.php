@@ -6,16 +6,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * UserstableFixture
+ * UsersFixture
  */
-class UserstableFixture extends TestFixture
+class UsersFixture extends TestFixture
 {
-    /**
-     * Table name
-     *
-     * @var string
-     */
-    public $table = 'userstable';
     /**
      * Init method
      *
@@ -28,6 +22,8 @@ class UserstableFixture extends TestFixture
                 'id' => 1,
                 'users' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
+                'created' => 1655218375,
+                'modified' => 1655218375,
             ],
         ];
         parent::init();
