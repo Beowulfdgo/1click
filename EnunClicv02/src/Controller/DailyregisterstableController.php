@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Dailyregisterstable Controller
  *
@@ -18,6 +19,7 @@ class DailyregisterstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $dailyregisterstable = $this->paginate($this->Dailyregisterstable);
 
         $this->set(compact('dailyregisterstable'));
@@ -32,6 +34,7 @@ class DailyregisterstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $dailyregisterstable = $this->Dailyregisterstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class DailyregisterstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $dailyregisterstable = $this->Dailyregisterstable->newEmptyEntity();
+        $this->Authorization->authorize($dailyregisterstable);
         if ($this->request->is('post')) {
             $dailyregisterstable = $this->Dailyregisterstable->patchEntity($dailyregisterstable, $this->request->getData());
+            $dailyregisterstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Dailyregisterstable->save($dailyregisterstable)) {
                 $this->Flash->success(__('The dailyregisterstable has been saved.'));
 
@@ -56,6 +63,10 @@ class DailyregisterstableController extends AppController
             }
             $this->Flash->error(__('The dailyregisterstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('dailyregisterstable'));
     }
 
@@ -68,9 +79,13 @@ class DailyregisterstableController extends AppController
      */
     public function edit($id = null)
     {
-        $dailyregisterstable = $this->Dailyregisterstable->get($id, [
-            'contain' => [],
-        ]);
+        //$dailyregisterstable = $this->Dailyregisterstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $dailyregisterstable = $this->Dailyregisterstable->get($id);
+        // Log::debug($id);
+        try{
+        $this->Authorization->authorize($dailyregisterstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $dailyregisterstable = $this->Dailyregisterstable->patchEntity($dailyregisterstable, $this->request->getData());
             if ($this->Dailyregisterstable->save($dailyregisterstable)) {
@@ -82,6 +97,10 @@ class DailyregisterstableController extends AppController
         }
         $this->set(compact('dailyregisterstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class DailyregisterstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $dailyregisterstable = $this->Dailyregisterstable->get($id);
+        $this->Authorization->authorize($dailyregisterstable);
         if ($this->Dailyregisterstable->delete($dailyregisterstable)) {
             $this->Flash->success(__('The dailyregisterstable has been deleted.'));
         } else {
             $this->Flash->error(__('The dailyregisterstable could not be deleted. Please, try again.'));
         }
-
-        return $this->redirect(['action' => 'index']);
+    }
+        catch(\Exception $e){
+            return $this->redirect(['action' => 'index']);
+           }
+           
+    }
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Costumerstable Controller
  *
@@ -18,6 +19,7 @@ class CostumerstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $costumerstable = $this->paginate($this->Costumerstable);
 
         $this->set(compact('costumerstable'));
@@ -32,6 +34,7 @@ class CostumerstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $costumerstable = $this->Costumerstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class CostumerstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $costumerstable = $this->Costumerstable->newEmptyEntity();
+        $this->Authorization->authorize($costumerstable);
         if ($this->request->is('post')) {
             $costumerstable = $this->Costumerstable->patchEntity($costumerstable, $this->request->getData());
+            $costumerstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Costumerstable->save($costumerstable)) {
                 $this->Flash->success(__('The costumerstable has been saved.'));
 
@@ -56,6 +63,10 @@ class CostumerstableController extends AppController
             }
             $this->Flash->error(__('The costumerstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('costumerstable'));
     }
 
@@ -68,9 +79,13 @@ class CostumerstableController extends AppController
      */
     public function edit($id = null)
     {
-        $costumerstable = $this->Costumerstable->get($id, [
-            'contain' => [],
-        ]);
+        //$costumerstable = $this->Costumerstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $costumerstable = $this->Costumerstable->get($id);
+        // Log::debug($id);
+       try{
+        $this->Authorization->authorize($costumerstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $costumerstable = $this->Costumerstable->patchEntity($costumerstable, $this->request->getData());
             if ($this->Costumerstable->save($costumerstable)) {
@@ -82,6 +97,10 @@ class CostumerstableController extends AppController
         }
         $this->set(compact('costumerstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class CostumerstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $costumerstable = $this->Costumerstable->get($id);
+        $this->Authorization->authorize($costumerstable);
         if ($this->Costumerstable->delete($costumerstable)) {
             $this->Flash->success(__('The costumerstable has been deleted.'));
         } else {
             $this->Flash->error(__('The costumerstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+       }
+    }
+
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

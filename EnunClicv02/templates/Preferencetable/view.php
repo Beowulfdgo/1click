@@ -10,12 +10,12 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Preferencetable'), ['action' => 'edit', $preferencetable->preferents_id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Preferencetable'), ['action' => 'delete', $preferencetable->preferents_id], ['confirm' => __('Are you sure you want to delete # {0}?', $preferencetable->preferents_id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Preferencetables'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Preferencetable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Preferencetable'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="preferencetables view content">
+        <div class="preferencetable view content">
             <h3><?= h($preferencetable->preferents_id) ?></h3>
             <table>
                 <tr>

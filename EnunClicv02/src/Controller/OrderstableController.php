@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Orderstable Controller
  *
@@ -18,6 +19,7 @@ class OrderstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $orderstable = $this->paginate($this->Orderstable);
 
         $this->set(compact('orderstable'));
@@ -32,6 +34,7 @@ class OrderstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $orderstable = $this->Orderstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class OrderstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $orderstable = $this->Orderstable->newEmptyEntity();
+        $this->Authorization->authorize($orderstable);
         if ($this->request->is('post')) {
             $orderstable = $this->Orderstable->patchEntity($orderstable, $this->request->getData());
+            $orderstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Orderstable->save($orderstable)) {
                 $this->Flash->success(__('The orderstable has been saved.'));
 
@@ -56,6 +63,10 @@ class OrderstableController extends AppController
             }
             $this->Flash->error(__('The orderstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('orderstable'));
     }
 
@@ -68,9 +79,13 @@ class OrderstableController extends AppController
      */
     public function edit($id = null)
     {
-        $orderstable = $this->Orderstable->get($id, [
-            'contain' => [],
-        ]);
+        //$orderstable = $this->Orderstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $orderstable = $this->Orderstable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($orderstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $orderstable = $this->Orderstable->patchEntity($orderstable, $this->request->getData());
             if ($this->Orderstable->save($orderstable)) {
@@ -82,6 +97,10 @@ class OrderstableController extends AppController
         }
         $this->set(compact('orderstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class OrderstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $orderstable = $this->Orderstable->get($id);
+        $this->Authorization->authorize($orderstable);
         if ($this->Orderstable->delete($orderstable)) {
             $this->Flash->success(__('The orderstable has been deleted.'));
         } else {
             $this->Flash->error(__('The orderstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

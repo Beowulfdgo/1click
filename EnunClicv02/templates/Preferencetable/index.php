@@ -1,12 +1,12 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Preferencetable[]|\Cake\Collection\CollectionInterface $preferencetables
+ * @var \App\Model\Entity\Preferencetable[]|\Cake\Collection\CollectionInterface $preferencetable
  */
 ?>
-<div class="preferencetables index content">
+<div class="preferencetable index content">
     <?= $this->Html->link(__('New Preferencetable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Preferencetables') ?></h3>
+    <h3><?= __('Preferencetable') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($preferencetables as $preferencetable): ?>
+                <?php foreach ($preferencetable as $preferencetable): ?>
                 <tr>
                     <td><?= $this->Number->format($preferencetable->preferents_id) ?></td>
                     <td><?= $preferencetable->preferent_fees === null ? '' : $this->Number->format($preferencetable->preferent_fees) ?></td>

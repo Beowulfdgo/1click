@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Productstable Controller
  *
@@ -18,6 +19,7 @@ class ProductstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $productstable = $this->paginate($this->Productstable);
 
         $this->set(compact('productstable'));
@@ -32,6 +34,7 @@ class ProductstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $productstable = $this->Productstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class ProductstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $productstable = $this->Productstable->newEmptyEntity();
+        $this->Authorization->authorize($productstable);
         if ($this->request->is('post')) {
             $productstable = $this->Productstable->patchEntity($productstable, $this->request->getData());
+            $productstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Productstable->save($productstable)) {
                 $this->Flash->success(__('The productstable has been saved.'));
 
@@ -56,6 +63,10 @@ class ProductstableController extends AppController
             }
             $this->Flash->error(__('The productstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('productstable'));
     }
 
@@ -68,9 +79,13 @@ class ProductstableController extends AppController
      */
     public function edit($id = null)
     {
-        $productstable = $this->Productstable->get($id, [
-            'contain' => [],
-        ]);
+        //$productstable = $this->Productstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $productstable = $this->Productstable->get($id);
+        // Log::debug($id);
+        try{
+        $this->Authorization->authorize($productstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $productstable = $this->Productstable->patchEntity($productstable, $this->request->getData());
             if ($this->Productstable->save($productstable)) {
@@ -82,6 +97,10 @@ class ProductstableController extends AppController
         }
         $this->set(compact('productstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class ProductstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $productstable = $this->Productstable->get($id);
+        $this->Authorization->authorize($productstable);
         if ($this->Productstable->delete($productstable)) {
             $this->Flash->success(__('The productstable has been deleted.'));
         } else {
             $this->Flash->error(__('The productstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

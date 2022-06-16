@@ -8,11 +8,11 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Preferencetables'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Preferencetable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="preferencetables form content">
+        <div class="preferencetable form content">
             <?= $this->Form->create($preferencetable) ?>
             <fieldset>
                 <legend><?= __('Add Preferencetable') ?></legend>

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Logisticstable Controller
  *
@@ -18,6 +19,7 @@ class LogisticstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $logisticstable = $this->paginate($this->Logisticstable);
 
         $this->set(compact('logisticstable'));
@@ -32,6 +34,7 @@ class LogisticstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $logisticstable = $this->Logisticstable->get($id, [
             'contain' => [],
         ]);
@@ -46,15 +49,23 @@ class LogisticstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $logisticstable = $this->Logisticstable->newEmptyEntity();
+        $this->Authorization->authorize($logisticstable);
         if ($this->request->is('post')) {
             $logisticstable = $this->Logisticstable->patchEntity($logisticstable, $this->request->getData());
+            $logisticstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Logisticstable->save($logisticstable)) {
                 $this->Flash->success(__('The logisticstable has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The logisticstable could not be saved. Please, try again.'));
+        }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('logisticstable'));
     }
@@ -68,9 +79,13 @@ class LogisticstableController extends AppController
      */
     public function edit($id = null)
     {
-        $logisticstable = $this->Logisticstable->get($id, [
-            'contain' => [],
-        ]);
+        //$logisticstable = $this->Logisticstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $logisticstable = $this->Logisticstable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($logisticstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $logisticstable = $this->Logisticstable->patchEntity($logisticstable, $this->request->getData());
             if ($this->Logisticstable->save($logisticstable)) {
@@ -82,6 +97,10 @@ class LogisticstableController extends AppController
         }
         $this->set(compact('logisticstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class LogisticstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $logisticstable = $this->Logisticstable->get($id);
+        $this->Authorization->authorize($logisticstable);
         if ($this->Logisticstable->delete($logisticstable)) {
             $this->Flash->success(__('The logisticstable has been deleted.'));
         } else {
             $this->Flash->error(__('The logisticstable could not be deleted. Please, try again.'));
         }
+    }
+        catch(\Exception $e){
+            return $this->redirect(['action' => 'index']);
+           }
 
-        return $this->redirect(['action' => 'index']);
+    }
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Rolestable Controller
  *
@@ -18,6 +19,7 @@ class RolestableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $rolestable = $this->paginate($this->Rolestable);
 
         $this->set(compact('rolestable'));
@@ -32,6 +34,7 @@ class RolestableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $rolestable = $this->Rolestable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class RolestableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $rolestable = $this->Rolestable->newEmptyEntity();
+        $this->Authorization->authorize($rolestable);
         if ($this->request->is('post')) {
             $rolestable = $this->Rolestable->patchEntity($rolestable, $this->request->getData());
+            $rolestable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Rolestable->save($rolestable)) {
                 $this->Flash->success(__('The rolestable has been saved.'));
 
@@ -56,6 +63,10 @@ class RolestableController extends AppController
             }
             $this->Flash->error(__('The rolestable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('rolestable'));
     }
 
@@ -68,9 +79,13 @@ class RolestableController extends AppController
      */
     public function edit($id = null)
     {
-        $rolestable = $this->Rolestable->get($id, [
-            'contain' => [],
-        ]);
+        //$rolestable = $this->Rolestable->get($id, [
+        //    'contain' => [],
+        //]);
+        $rolestable = $this->Rolestable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($rolestable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $rolestable = $this->Rolestable->patchEntity($rolestable, $this->request->getData());
             if ($this->Rolestable->save($rolestable)) {
@@ -82,6 +97,10 @@ class RolestableController extends AppController
         }
         $this->set(compact('rolestable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class RolestableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $rolestable = $this->Rolestable->get($id);
+        $this->Authorization->authorize($rolestable);
         if ($this->Rolestable->delete($rolestable)) {
             $this->Flash->success(__('The rolestable has been deleted.'));
         } else {
             $this->Flash->error(__('The rolestable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

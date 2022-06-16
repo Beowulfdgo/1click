@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Zonestable Controller
  *
@@ -18,6 +19,7 @@ class ZonestableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $zonestable = $this->paginate($this->Zonestable);
 
         $this->set(compact('zonestable'));
@@ -32,6 +34,7 @@ class ZonestableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $zonestable = $this->Zonestable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class ZonestableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $zonestable = $this->Zonestable->newEmptyEntity();
+        $this->Authorization->authorize($zonestable);
         if ($this->request->is('post')) {
             $zonestable = $this->Zonestable->patchEntity($zonestable, $this->request->getData());
+            $zonestable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Zonestable->save($zonestable)) {
                 $this->Flash->success(__('The zonestable has been saved.'));
 
@@ -56,6 +63,10 @@ class ZonestableController extends AppController
             }
             $this->Flash->error(__('The zonestable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('zonestable'));
     }
 
@@ -68,9 +79,13 @@ class ZonestableController extends AppController
      */
     public function edit($id = null)
     {
-        $zonestable = $this->Zonestable->get($id, [
-            'contain' => [],
-        ]);
+        //$zonestable = $this->Zonestable->get($id, [
+        //    'contain' => [],
+        //]);
+        $zonestable = $this->Zonestable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($zonestable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $zonestable = $this->Zonestable->patchEntity($zonestable, $this->request->getData());
             if ($this->Zonestable->save($zonestable)) {
@@ -82,6 +97,10 @@ class ZonestableController extends AppController
         }
         $this->set(compact('zonestable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class ZonestableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $zonestable = $this->Zonestable->get($id);
+        $this->Authorization->authorize($zonestable);
         if ($this->Zonestable->delete($zonestable)) {
             $this->Flash->success(__('The zonestable has been deleted.'));
         } else {
             $this->Flash->error(__('The zonestable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

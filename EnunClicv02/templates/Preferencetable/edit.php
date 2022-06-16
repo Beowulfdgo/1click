@@ -13,11 +13,11 @@
                 ['action' => 'delete', $preferencetable->preferents_id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $preferencetable->preferents_id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Preferencetables'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Preferencetable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="preferencetables form content">
+        <div class="preferencetable form content">
             <?= $this->Form->create($preferencetable) ?>
             <fieldset>
                 <legend><?= __('Edit Preferencetable') ?></legend>

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Supplierstable Controller
  *
@@ -18,6 +19,7 @@ class SupplierstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $supplierstable = $this->paginate($this->Supplierstable);
 
         $this->set(compact('supplierstable'));
@@ -32,6 +34,7 @@ class SupplierstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $supplierstable = $this->Supplierstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class SupplierstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $supplierstable = $this->Supplierstable->newEmptyEntity();
+        $this->Authorization->authorize($supplierstable);
         if ($this->request->is('post')) {
             $supplierstable = $this->Supplierstable->patchEntity($supplierstable, $this->request->getData());
+            $supplierstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Supplierstable->save($supplierstable)) {
                 $this->Flash->success(__('The supplierstable has been saved.'));
 
@@ -56,6 +63,10 @@ class SupplierstableController extends AppController
             }
             $this->Flash->error(__('The supplierstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('supplierstable'));
     }
 
@@ -68,9 +79,13 @@ class SupplierstableController extends AppController
      */
     public function edit($id = null)
     {
-        $supplierstable = $this->Supplierstable->get($id, [
-            'contain' => [],
-        ]);
+        //$supplierstable = $this->Supplierstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $supplierstable = $this->Supplierstable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($supplierstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $supplierstable = $this->Supplierstable->patchEntity($supplierstable, $this->request->getData());
             if ($this->Supplierstable->save($supplierstable)) {
@@ -82,6 +97,10 @@ class SupplierstableController extends AppController
         }
         $this->set(compact('supplierstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class SupplierstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $supplierstable = $this->Supplierstable->get($id);
+        $this->Authorization->authorize($supplierstable);
         if ($this->Supplierstable->delete($supplierstable)) {
             $this->Flash->success(__('The supplierstable has been deleted.'));
         } else {
             $this->Flash->error(__('The supplierstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

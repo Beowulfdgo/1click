@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Paymentstable Controller
  *
@@ -18,6 +19,7 @@ class PaymentstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $paymentstable = $this->paginate($this->Paymentstable);
 
         $this->set(compact('paymentstable'));
@@ -32,6 +34,7 @@ class PaymentstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $paymentstable = $this->Paymentstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class PaymentstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $paymentstable = $this->Paymentstable->newEmptyEntity();
+        $this->Authorization->authorize($paymentstable);
         if ($this->request->is('post')) {
             $paymentstable = $this->Paymentstable->patchEntity($paymentstable, $this->request->getData());
+            $paymentstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Paymentstable->save($paymentstable)) {
                 $this->Flash->success(__('The paymentstable has been saved.'));
 
@@ -56,6 +63,10 @@ class PaymentstableController extends AppController
             }
             $this->Flash->error(__('The paymentstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('paymentstable'));
     }
 
@@ -68,9 +79,13 @@ class PaymentstableController extends AppController
      */
     public function edit($id = null)
     {
-        $paymentstable = $this->Paymentstable->get($id, [
-            'contain' => [],
-        ]);
+        //$paymentstable = $this->Paymentstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $paymentstable = $this->Paymentstable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($paymentstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $paymentstable = $this->Paymentstable->patchEntity($paymentstable, $this->request->getData());
             if ($this->Paymentstable->save($paymentstable)) {
@@ -82,6 +97,10 @@ class PaymentstableController extends AppController
         }
         $this->set(compact('paymentstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class PaymentstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $paymentstable = $this->Paymentstable->get($id);
+        $this->Authorization->authorize($paymentstable);
         if ($this->Paymentstable->delete($paymentstable)) {
             $this->Flash->success(__('The paymentstable has been deleted.'));
         } else {
             $this->Flash->error(__('The paymentstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+    
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

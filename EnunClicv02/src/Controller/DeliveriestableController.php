@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Deliveriestable Controller
  *
@@ -18,6 +19,7 @@ class DeliveriestableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $deliveriestable = $this->paginate($this->Deliveriestable);
 
         $this->set(compact('deliveriestable'));
@@ -32,6 +34,7 @@ class DeliveriestableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $deliveriestable = $this->Deliveriestable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class DeliveriestableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $deliveriestable = $this->Deliveriestable->newEmptyEntity();
+        $this->Authorization->authorize($deliveriestable);
         if ($this->request->is('post')) {
             $deliveriestable = $this->Deliveriestable->patchEntity($deliveriestable, $this->request->getData());
+            $deliveriestable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Deliveriestable->save($deliveriestable)) {
                 $this->Flash->success(__('The deliveriestable has been saved.'));
 
@@ -56,6 +63,10 @@ class DeliveriestableController extends AppController
             }
             $this->Flash->error(__('The deliveriestable could not be saved. Please, try again.'));
         }
+    }
+        catch(\Exception $e){
+            return $this->redirect(['action' => 'index']);
+           }
         $this->set(compact('deliveriestable'));
     }
 
@@ -68,9 +79,13 @@ class DeliveriestableController extends AppController
      */
     public function edit($id = null)
     {
-        $deliveriestable = $this->Deliveriestable->get($id, [
-            'contain' => [],
-        ]);
+        //$deliveriestable = $this->Deliveriestable->get($id, [
+        //    'contain' => [],
+        //]);
+        $deliveriestable = $this->Deliveriestable->get($id);
+        // Log::debug($id);
+        try{
+        $this->Authorization->authorize($deliveriestable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $deliveriestable = $this->Deliveriestable->patchEntity($deliveriestable, $this->request->getData());
             if ($this->Deliveriestable->save($deliveriestable)) {
@@ -82,6 +97,10 @@ class DeliveriestableController extends AppController
         }
         $this->set(compact('deliveriestable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class DeliveriestableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $deliveriestable = $this->Deliveriestable->get($id);
+        $this->Authorization->authorize($deliveriestable);
         if ($this->Deliveriestable->delete($deliveriestable)) {
             $this->Flash->success(__('The deliveriestable has been deleted.'));
         } else {
             $this->Flash->error(__('The deliveriestable could not be deleted. Please, try again.'));
         }
+    }
+        catch(\Exception $e){
+            return $this->redirect(['action' => 'index']);
+           }
 
-        return $this->redirect(['action' => 'index']);
+    }
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }

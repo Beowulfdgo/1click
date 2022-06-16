@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Log\Log;
 /**
  * Adstable Controller
  *
@@ -18,6 +19,7 @@ class AdstableController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $adstable = $this->paginate($this->Adstable);
 
         $this->set(compact('adstable'));
@@ -32,6 +34,7 @@ class AdstableController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $adstable = $this->Adstable->get($id, [
             'contain' => [],
         ]);
@@ -46,9 +49,13 @@ class AdstableController extends AppController
      */
     public function add()
     {
+        try{
+        $this->Authorization->skipAuthorization();
         $adstable = $this->Adstable->newEmptyEntity();
+        $this->Authorization->authorize($adstable);
         if ($this->request->is('post')) {
             $adstable = $this->Adstable->patchEntity($adstable, $this->request->getData());
+            $adstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Adstable->save($adstable)) {
                 $this->Flash->success(__('The adstable has been saved.'));
 
@@ -56,6 +63,10 @@ class AdstableController extends AppController
             }
             $this->Flash->error(__('The adstable could not be saved. Please, try again.'));
         }
+    }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
         $this->set(compact('adstable'));
     }
 
@@ -68,9 +79,13 @@ class AdstableController extends AppController
      */
     public function edit($id = null)
     {
-        $adstable = $this->Adstable->get($id, [
-            'contain' => [],
-        ]);
+        //$adstable = $this->Adstable->get($id, [
+        //    'contain' => [],
+        //]);
+        $adstable = $this->Adstable->get($id);
+       // Log::debug($id);
+       try{
+        $this->Authorization->authorize($adstable);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $adstable = $this->Adstable->patchEntity($adstable, $this->request->getData());
             if ($this->Adstable->save($adstable)) {
@@ -82,6 +97,10 @@ class AdstableController extends AppController
         }
         $this->set(compact('adstable'));
     }
+    catch(\Exception $e){
+        return $this->redirect(['action' => 'index']);
+       }
+    }
 
     /**
      * Delete method
@@ -92,14 +111,28 @@ class AdstableController extends AppController
      */
     public function delete($id = null)
     {
+        try{
         $this->request->allowMethod(['post', 'delete']);
         $adstable = $this->Adstable->get($id);
+        $this->Authorization->authorize($adstable);
         if ($this->Adstable->delete($adstable)) {
             $this->Flash->success(__('The adstable has been deleted.'));
         } else {
             $this->Flash->error(__('The adstable could not be deleted. Please, try again.'));
         }
-
+    }
+    catch(\Exception $e){
         return $this->redirect(['action' => 'index']);
+        }
+    }
+
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+        return false;
     }
 }
