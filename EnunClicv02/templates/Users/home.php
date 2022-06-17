@@ -26,7 +26,7 @@ use Cake\Http\Exception\NotFoundException;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Bienvenido a la vista del administrador
+        Bienvenido 
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
@@ -43,7 +43,7 @@ use Cake\Http\Exception\NotFoundException;
 <header>
        
             <h1>
-                Bienvenido a la Vista del Administrador 
+                ¡Bienvenido!
             </h1>
             <h1>
                 Menú
@@ -64,46 +64,29 @@ use Cake\Http\Exception\NotFoundException;
                 
             </style>
             <h3>
-            <a href="http://localhost:8765/adstable" tarjet="_blank">Adstable</a>    
+            <a href="http://localhost:8765/costumerstable" tarjet="_blank">Clientes</a> 
             </h3>
             <h3>
-            <a href="http://localhost:8765/costumerstable" tarjet="_blank">Costumerstable</a> 
+            <a href="http://localhost:8765/dailyregisterstable" tarjet="_blank">Registro Diario</a>
             </h3>
             <h3>
-            <a href="http://localhost:8765/dailyregisterstable" tarjet="_blank">Dailyregisterstable</a>
+            <a href="http://localhost:8765/deliveriestable" tarjet="_blank">Repartidores</a>
             </h3>
+        
             <h3>
-            <a href="http://localhost:8765/deliveriestable" tarjet="_blank">Deliveriestable</a>
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/logisticstable" tarjet="_blank">Logisticstable</a>
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/offerstable" tarjet="_blank">Offerstable</a>
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/orderstable" tarjet="_blank">Orderstable</a> 
+            <a href="http://localhost:8765/orderstable" tarjet="_blank">Pedidos</a> 
              </h3>
+             
              <h3>
-             <a href="http://localhost:8765/paymentstable" tarjet="_blank">Paymentstable</a> 
+             <a href="http://localhost:8765/preferencetable" tarjet="_blank">Clientes Preferidos</a>   
             </h3>
-             <h3>
-             <a href="http://localhost:8765/preferencetable" tarjet="_blank">Preferencetable</a>   
+            
+            <h3>
+            <a href="http://localhost:8765/supplierstable" tarjet="_blank">Proveedores</a>    
             </h3>
             <h3>
-            <a href="http://localhost:8765/productstable" tarjet="_blank">Productstable</a>    
+            <a href="http://localhost:8765/users" tarjet="_blank">Usuarios</a>    
             </h3>
-            <h3>
-            <a href="http://localhost:8765/rolestable" tarjet="_blank">Rolestable</a>
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/supplierstable" tarjet="_blank">Supplierstable</a>    
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/users" tarjet="_blank">Users</a>    
-            </h3>
-            <h3>
-            <a href="http://localhost:8765/zonestable" tarjet="_blank">Zonestable</a>    
-            </h3>
+            
     </header>
 </body>
