@@ -1,0 +1,195 @@
+2022-06-17 16:38:14 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 16:39:11 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 16:51:48 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:08:51 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:32:18 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:33:15 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:40:32 error: [Cake\Database\Exception\DatabaseException] Cannot describe all}. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:40:36 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:41:13 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:45:51 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:50:57 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:51:42 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:58:52 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 18:01:59 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 18:24:32 warning: Warning (512): Association property name "role" clashes with field of same name of table "users". You should explicitly specify the "propertyName" option. in [C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Association.php, line 605]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 185
+Cake\ORM\Association::getProperty() - CORE\src\ORM\Association.php, line 605
+Bake\Command\ModelCommand::getEntityPropertySchema() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 595
+Bake\Command\ModelCommand::getTableContext() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 163
+Bake\Command\ModelCommand::bake() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 112
+Bake\Command\ModelCommand::execute() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 94
+Bake\Command\ModelAllCommand::execute() - ROOT\vendor\cakephp\bake\src\Command\ModelAllCommand.php, line 89
+Cake\Console\BaseCommand::run() - CORE\src\Console\BaseCommand.php, line 179
+Cake\Console\CommandRunner::runCommand() - CORE\src\Console\CommandRunner.php, line 334
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 172
+[main] - ROOT\bin\cake.php, line 12
+
