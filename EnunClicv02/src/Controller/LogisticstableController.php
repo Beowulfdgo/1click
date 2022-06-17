@@ -117,6 +117,7 @@ class LogisticstableController extends AppController
         $this->Authorization->authorize($logisticstable);
         if ($this->Logisticstable->delete($logisticstable)) {
             $this->Flash->success(__('The logisticstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The logisticstable could not be deleted. Please, try again.'));
         }

@@ -117,6 +117,7 @@ class PaymentstableController extends AppController
         $this->Authorization->authorize($paymentstable);
         if ($this->Paymentstable->delete($paymentstable)) {
             $this->Flash->success(__('The paymentstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The paymentstable could not be deleted. Please, try again.'));
         }

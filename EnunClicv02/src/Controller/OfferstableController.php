@@ -117,6 +117,7 @@ class OfferstableController extends AppController
         $this->Authorization->authorize($offerstable);
         if ($this->Offerstable->delete($offerstable)) {
             $this->Flash->success(__('The offerstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The offerstable could not be deleted. Please, try again.'));
         }

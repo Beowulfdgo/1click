@@ -8,6 +8,9 @@
     <?= $this->Html->link(__('New Logisticstable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Logisticstable') ?></h3>
     <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765/users/home" tarjet="_blank">Regresar</a>
+    </h3>
         <table>
             <thead>
                 <tr>

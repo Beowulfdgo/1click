@@ -5,9 +5,7 @@ namespace App\Policy;
 
 use App\Model\Entity\Users;
 use Authorization\IdentityInterface;
-use App\Policy\Exception;
-use Cake\Network\Exception\NotFoundException;
-use Cake\Error\ExceptionRenderer;
+
 /**
  * Users policy
  */
@@ -59,9 +57,10 @@ class UsersPolicy
     public function canView(IdentityInterface $user, Users $users)
     {
     }
-    protected function isAuthor(IdentityInterface $user, Users $users)
+    
+    protected function isAuthor(IdentityInterface $user,  Users $users)
     {
-        return $users->user_id === $user->getIdentifier();
+        return  $users->user_id === $user->getIdentifier();
     }
     public function isAuthorized($user)
     {

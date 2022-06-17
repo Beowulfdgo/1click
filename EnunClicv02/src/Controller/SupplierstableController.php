@@ -117,6 +117,7 @@ class SupplierstableController extends AppController
         $this->Authorization->authorize($supplierstable);
         if ($this->Supplierstable->delete($supplierstable)) {
             $this->Flash->success(__('The supplierstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The supplierstable could not be deleted. Please, try again.'));
         }

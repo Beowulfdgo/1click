@@ -117,6 +117,7 @@ class DailyregisterstableController extends AppController
         $this->Authorization->authorize($dailyregisterstable);
         if ($this->Dailyregisterstable->delete($dailyregisterstable)) {
             $this->Flash->success(__('The dailyregisterstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The dailyregisterstable could not be deleted. Please, try again.'));
         }

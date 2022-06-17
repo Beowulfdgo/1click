@@ -117,6 +117,7 @@ class AdstableController extends AppController
         $this->Authorization->authorize($adstable);
         if ($this->Adstable->delete($adstable)) {
             $this->Flash->success(__('The adstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The adstable could not be deleted. Please, try again.'));
         }

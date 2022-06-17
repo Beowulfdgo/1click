@@ -117,6 +117,7 @@ class PreferencetableController extends AppController
         $this->Authorization->authorize($preferencetable);
         if ($this->Preferencetable->delete($preferencetable)) {
             $this->Flash->success(__('The preferencetable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The preferencetable could not be deleted. Please, try again.'));
         }

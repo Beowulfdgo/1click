@@ -117,6 +117,7 @@ class RolestableController extends AppController
         $this->Authorization->authorize($rolestable);
         if ($this->Rolestable->delete($rolestable)) {
             $this->Flash->success(__('The rolestable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The rolestable could not be deleted. Please, try again.'));
         }

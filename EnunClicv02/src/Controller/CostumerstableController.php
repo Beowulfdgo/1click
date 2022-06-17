@@ -117,6 +117,7 @@ class CostumerstableController extends AppController
         $this->Authorization->authorize($costumerstable);
         if ($this->Costumerstable->delete($costumerstable)) {
             $this->Flash->success(__('The costumerstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The costumerstable could not be deleted. Please, try again.'));
         }

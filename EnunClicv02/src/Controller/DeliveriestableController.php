@@ -117,6 +117,7 @@ class DeliveriestableController extends AppController
         $this->Authorization->authorize($deliveriestable);
         if ($this->Deliveriestable->delete($deliveriestable)) {
             $this->Flash->success(__('The deliveriestable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The deliveriestable could not be deleted. Please, try again.'));
         }

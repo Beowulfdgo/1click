@@ -117,6 +117,7 @@ class OrderstableController extends AppController
         $this->Authorization->authorize($orderstable);
         if ($this->Orderstable->delete($orderstable)) {
             $this->Flash->success(__('The orderstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The orderstable could not be deleted. Please, try again.'));
         }

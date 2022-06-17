@@ -117,6 +117,7 @@ class ZonestableController extends AppController
         $this->Authorization->authorize($zonestable);
         if ($this->Zonestable->delete($zonestable)) {
             $this->Flash->success(__('The zonestable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The zonestable could not be deleted. Please, try again.'));
         }

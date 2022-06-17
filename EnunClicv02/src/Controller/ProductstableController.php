@@ -117,6 +117,7 @@ class ProductstableController extends AppController
         $this->Authorization->authorize($productstable);
         if ($this->Productstable->delete($productstable)) {
             $this->Flash->success(__('The productstable has been deleted.'));
+            return $this->redirect(['action' => 'index']);
         } else {
             $this->Flash->error(__('The productstable could not be deleted. Please, try again.'));
         }
