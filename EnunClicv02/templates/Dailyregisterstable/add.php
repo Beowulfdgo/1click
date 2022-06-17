@@ -7,23 +7,23 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Dailyregisterstable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
+            <?= $this->Html->link(__('Lista de Registro Diario'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="dailyregisterstable form content">
             <?= $this->Form->create($dailyregisterstable) ?>
             <fieldset>
-                <legend><?= __('Add Dailyregisterstable') ?></legend>
+                <legend><?= __('Nuevo Registro Diario') ?></legend>
                 <?php
-                    echo $this->Form->control('register_status');
-                    echo $this->Form->control('daily_initial_cashes');
-                    echo $this->Form->control('daily_final_cashes');
-                    echo $this->Form->control('register_dates', ['empty' => true]);
+                    echo $this->Form->control('register_status',['label' => 'Estado']);
+                    echo $this->Form->control('daily_initial_cashes',['label' => 'Caja Incial ']);
+                    echo $this->Form->control('daily_final_cashes',['label' => 'Caja Final']);
+                    echo $this->Form->control('register_dates', ['empty' => true, 'label' => 'Fecha']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Guardar')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

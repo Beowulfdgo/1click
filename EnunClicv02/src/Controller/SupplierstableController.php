@@ -57,11 +57,11 @@ class SupplierstableController extends AppController
             $supplierstable = $this->Supplierstable->patchEntity($supplierstable, $this->request->getData());
             $supplierstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Supplierstable->save($supplierstable)) {
-                $this->Flash->success(__('The supplierstable has been saved.'));
+                $this->Flash->success(__('El proveedor ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The supplierstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El proveedor no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -89,11 +89,11 @@ class SupplierstableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $supplierstable = $this->Supplierstable->patchEntity($supplierstable, $this->request->getData());
             if ($this->Supplierstable->save($supplierstable)) {
-                $this->Flash->success(__('The supplierstable has been saved.'));
+                $this->Flash->success(__('El proveedor ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The supplierstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El proveedor no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('supplierstable'));
     }
@@ -116,10 +116,10 @@ class SupplierstableController extends AppController
         $supplierstable = $this->Supplierstable->get($id);
         $this->Authorization->authorize($supplierstable);
         if ($this->Supplierstable->delete($supplierstable)) {
-            $this->Flash->success(__('The supplierstable has been deleted.'));
+            $this->Flash->success(__('El proveedor ha sido eliminado exitosamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The supplierstable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El proveedor no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){

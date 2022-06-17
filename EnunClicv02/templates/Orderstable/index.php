@@ -5,23 +5,23 @@
  */
 ?>
 <div class="orderstable index content">
-    <?= $this->Html->link(__('New Orderstable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Orderstable') ?></h3>
+    <?= $this->Html->link(__('Nuevo Pedido'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Pedidos') ?></h3>
     <div class="table-responsive">
     <h3>
-        <a href="http://localhost:8765/users/home" tarjet="_blank">Regresar</a>
+    <?= $this->Html->link(__('Regresar'), ['controller'=>'users','action' => 'home'], ['class' => 'button float-right']) ?>
     </h3>
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('orders_id') ?></th>
-                    <th><?= $this->Paginator->sort('order_addresses') ?></th>
-                    <th><?= $this->Paginator->sort('referencess') ?></th>
-                    <th><?= $this->Paginator->sort('dates') ?></th>
-                    <th><?= $this->Paginator->sort('times') ?></th>
-                    <th><?= $this->Paginator->sort('fees') ?></th>
-                    <th><?= $this->Paginator->sort('status') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+                    <th><?= $this->Paginator->sort('orders_id',['label' => 'Id']) ?></th>
+                    <th><?= $this->Paginator->sort('order_addresses',['label' => 'Dirección']) ?></th>
+                    <th><?= $this->Paginator->sort('referencess',['label' => 'Referencias']) ?></th>
+                    <th><?= $this->Paginator->sort('dates',['label' => 'Fecha']) ?></th>
+                    <th><?= $this->Paginator->sort('times',['label' => 'Hora']) ?></th>
+                    <th><?= $this->Paginator->sort('fees',['label' => 'Precio']) ?></th>
+                    <th><?= $this->Paginator->sort('status',['label' => 'Estado']) ?></th>
+                    <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,9 +35,9 @@
                     <td><?= $orderstable->fees === null ? '' : $this->Number->format($orderstable->fees) ?></td>
                     <td><?= h($orderstable->status) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $orderstable->orders_id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderstable->orders_id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $orderstable->orders_id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderstable->orders_id)]) ?>
+                        <?= $this->Html->link(__('Ver'), ['action' => 'view', $orderstable->orders_id]) ?>
+                        <?= $this->Html->link(__('Editar'), ['action' => 'edit', $orderstable->orders_id]) ?>
+                        <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $orderstable->orders_id], ['confirm' => __('Está seguro de querer eliminar el pedido # {0}?', $orderstable->orders_id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -47,11 +47,11 @@
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+        <p><?= $this->Paginator->counter(__('Pagina {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')) ?></p>
     </div>
 </div>

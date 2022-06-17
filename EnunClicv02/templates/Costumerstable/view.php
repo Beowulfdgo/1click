@@ -7,11 +7,11 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Costumerstable'), ['action' => 'edit', $costumerstable->costumer_id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Costumerstable'), ['action' => 'delete', $costumerstable->costumer_id], ['confirm' => __('Are you sure you want to delete # {0}?', $costumerstable->costumer_id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Costumerstable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Costumerstable'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
+            <?= $this->Html->link(__('Editar Clientes'), ['action' => 'edit', $costumerstable->costumer_id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Eliminar Clientes'), ['action' => 'delete', $costumerstable->costumer_id], ['confirm' => __('Está seguro de querer eliminar el cliente # {0}?', $costumerstable->costumer_id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Lista de Clientes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Nuevo Cliente'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -19,24 +19,24 @@
             <h3><?= h($costumerstable->costumer_id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Costumer Names') ?></th>
+                    <th><?= __('Nombre ') ?></th>
                     <td><?= h($costumerstable->costumer_names) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Costumer Addresses') ?></th>
+                    <th><?= __('Dirección ') ?></th>
                     <td><?= h($costumerstable->costumer_addresses) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Costumer Id') ?></th>
+                    <th><?= __('Id ') ?></th>
                     <td><?= $this->Number->format($costumerstable->costumer_id) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Costumer Phones') ?></th>
+                    <th><?= __('Teléfono') ?></th>
                     <td><?= $this->Number->format($costumerstable->costumer_phones) ?></td>
                 </tr>
             </table>
             <div class="text">
-                <strong><?= __('Costumer Gps') ?></strong>
+                <strong><?= __("GPS") ?></strong>
                 <blockquote>
                     <?= $this->Text->autoParagraph(h($costumerstable->costumer_gps)); ?>
                 </blockquote>

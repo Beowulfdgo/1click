@@ -57,11 +57,11 @@ class DeliveriestableController extends AppController
             $deliveriestable = $this->Deliveriestable->patchEntity($deliveriestable, $this->request->getData());
             $deliveriestable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Deliveriestable->save($deliveriestable)) {
-                $this->Flash->success(__('The deliveriestable has been saved.'));
+                $this->Flash->success(__('El repartidor ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The deliveriestable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El repartidor no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
         catch(\Exception $e){
@@ -89,11 +89,11 @@ class DeliveriestableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $deliveriestable = $this->Deliveriestable->patchEntity($deliveriestable, $this->request->getData());
             if ($this->Deliveriestable->save($deliveriestable)) {
-                $this->Flash->success(__('The deliveriestable has been saved.'));
+                $this->Flash->success(__('El repartidor ha sido guardado exitosamente'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The deliveriestable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El repartidor no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('deliveriestable'));
     }
@@ -116,10 +116,10 @@ class DeliveriestableController extends AppController
         $deliveriestable = $this->Deliveriestable->get($id);
         $this->Authorization->authorize($deliveriestable);
         if ($this->Deliveriestable->delete($deliveriestable)) {
-            $this->Flash->success(__('The deliveriestable has been deleted.'));
+            $this->Flash->success(__('El repartidor ha sido eliminado exitosamente'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The deliveriestable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El repartidor no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
         catch(\Exception $e){

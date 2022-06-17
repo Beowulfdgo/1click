@@ -7,31 +7,31 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
             <?= $this->Form->postLink(
-                __('Delete'),
+                __('Eliminar'),
                 ['action' => 'delete', $orderstable->orders_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $orderstable->orders_id), 'class' => 'side-nav-item']
+                ['confirm' => __('Está seguro de querer eliminar el pedido # {0}?', $orderstable->orders_id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('List Orderstable'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Lista de Pedidos'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="orderstable form content">
             <?= $this->Form->create($orderstable) ?>
             <fieldset>
-                <legend><?= __('Edit Orderstable') ?></legend>
+                <legend><?= __('Editar Pedidos') ?></legend>
                 <?php
-                    echo $this->Form->control('order_addresses');
-                    echo $this->Form->control('referencess');
-                    echo $this->Form->control('dates', ['empty' => true]);
-                    echo $this->Form->control('times', ['empty' => true]);
-                    echo $this->Form->control('fees');
-                    echo $this->Form->control('status');
-                    echo $this->Form->control('orders_gps');
+                    echo $this->Form->control('order_addresses',['label' => 'Dirección']);
+                    echo $this->Form->control('referencess',['label' => 'Referencias']);
+                    echo $this->Form->control('dates', ['empty' => true, 'label' => 'Fecha']);
+                    echo $this->Form->control('times', ['empty' => true, 'label' => 'Hora']);
+                    echo $this->Form->control('fees',['label' => 'Precio']);
+                    echo $this->Form->control('status',['label' => 'Estado']);
+                    echo $this->Form->control('orders_gps',['label' => 'GPS']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Guardar')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

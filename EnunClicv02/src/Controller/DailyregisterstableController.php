@@ -57,11 +57,11 @@ class DailyregisterstableController extends AppController
             $dailyregisterstable = $this->Dailyregisterstable->patchEntity($dailyregisterstable, $this->request->getData());
             $dailyregisterstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Dailyregisterstable->save($dailyregisterstable)) {
-                $this->Flash->success(__('The dailyregisterstable has been saved.'));
+                $this->Flash->success(__('El registro diario ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The dailyregisterstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El registro diario no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -89,11 +89,11 @@ class DailyregisterstableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $dailyregisterstable = $this->Dailyregisterstable->patchEntity($dailyregisterstable, $this->request->getData());
             if ($this->Dailyregisterstable->save($dailyregisterstable)) {
-                $this->Flash->success(__('The dailyregisterstable has been saved.'));
+                $this->Flash->success(__('El registro diario ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The dailyregisterstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El registro diario no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('dailyregisterstable'));
     }
@@ -116,10 +116,10 @@ class DailyregisterstableController extends AppController
         $dailyregisterstable = $this->Dailyregisterstable->get($id);
         $this->Authorization->authorize($dailyregisterstable);
         if ($this->Dailyregisterstable->delete($dailyregisterstable)) {
-            $this->Flash->success(__('The dailyregisterstable has been deleted.'));
+            $this->Flash->success(__('El registro diario ha sido eliminado exitosamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The dailyregisterstable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El registro diario no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
         catch(\Exception $e){

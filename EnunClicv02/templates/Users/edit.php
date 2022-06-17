@@ -7,11 +7,11 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
             <?= $this->Form->postLink(
-                __('Delete'),
+                __('Eliminar'),
                 ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Está seguro de querer eliminar el usuario # {0}?', $user->id), 'class' => 'side-nav-item']
             ) ?>
             <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -20,13 +20,13 @@
         <div class="users form content">
             <?= $this->Form->create($user) ?>
             <fieldset>
-                <legend><?= __('Edit User') ?></legend>
+                <legend><?= __('Editar Usuario') ?></legend>
                 <?php
-                    echo $this->Form->control('users');
-                    echo $this->Form->control('password');
+                    echo $this->Form->control('users',['label' => 'Usuario']);
+                    echo $this->Form->control('password',['label' => 'Contraseña']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Guardar')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

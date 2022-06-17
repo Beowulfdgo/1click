@@ -7,22 +7,22 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
+            <?= $this->Html->link(__('Lista de Usuarios'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="users form content">
             <?= $this->Form->create($user) ?>
             <fieldset>
-                <legend><?= __('Add User') ?></legend>
+                <legend><?= __('Añadir Usuario') ?></legend>
                 <?php
-                    echo $this->Form->control('users');
-                    echo $this->Form->control('role');
-                    echo $this->Form->control('password');
+                    echo $this->Form->control('users',['label' => 'Usuario']);
+                    echo $this->Form->control('role',['label' => 'Rol']);
+                    echo $this->Form->control('password',['label' => 'Contraseña']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Guardar')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

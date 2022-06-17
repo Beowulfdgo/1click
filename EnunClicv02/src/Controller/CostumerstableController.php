@@ -57,11 +57,11 @@ class CostumerstableController extends AppController
             $costumerstable = $this->Costumerstable->patchEntity($costumerstable, $this->request->getData());
             $costumerstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Costumerstable->save($costumerstable)) {
-                $this->Flash->success(__('The costumerstable has been saved.'));
+                $this->Flash->success(__('El cliente ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The costumerstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El cliente no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -89,11 +89,11 @@ class CostumerstableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $costumerstable = $this->Costumerstable->patchEntity($costumerstable, $this->request->getData());
             if ($this->Costumerstable->save($costumerstable)) {
-                $this->Flash->success(__('The costumerstable has been saved.'));
+                $this->Flash->success(__('El cliente ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The costumerstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El cliente no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('costumerstable'));
     }
@@ -116,10 +116,10 @@ class CostumerstableController extends AppController
         $costumerstable = $this->Costumerstable->get($id);
         $this->Authorization->authorize($costumerstable);
         if ($this->Costumerstable->delete($costumerstable)) {
-            $this->Flash->success(__('The costumerstable has been deleted.'));
+            $this->Flash->success(__("El cliente ha sido eliminado exitosamente."));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The costumerstable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El cliente no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){

@@ -30,7 +30,6 @@ use Cake\Http\Exception\NotFoundException;
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'home']) ?>
@@ -87,6 +86,6 @@ use Cake\Http\Exception\NotFoundException;
             <h3>
             <a href="http://localhost:8765/users" tarjet="_blank">Usuarios</a>    
             </h3>
-            
+            <?= $this->Html->link("Cerrar Sesión", ['action' => 'logout']) ?>
     </header>
 </body>

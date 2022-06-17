@@ -57,7 +57,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $user->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('El usuario ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -91,11 +91,11 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('El usuario ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('El usuario no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('user'));
     }
@@ -119,10 +119,10 @@ class UsersController extends AppController
         $user = $this->Users->get($id);
        
         if ($this->Users->delete($user)) {
-            $this->Flash->success(__('The user has been deleted.'));
+            $this->Flash->success(__('El usuario ha sido eliminado exitosamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The user could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El usuario no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -156,7 +156,7 @@ public function login()
     }
     // display error if user submitted and authentication failed
     if ($this->request->is('post') && !$result->isValid()) {
-        $this->Flash->error(__('Invalid username or password'));
+        $this->Flash->error(__('Usuario o contraseña invalido'));
     }
 }
 public function logout()

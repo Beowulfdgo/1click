@@ -57,11 +57,11 @@ class OrderstableController extends AppController
             $orderstable = $this->Orderstable->patchEntity($orderstable, $this->request->getData());
             $orderstable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Orderstable->save($orderstable)) {
-                $this->Flash->success(__('The orderstable has been saved.'));
+                $this->Flash->success(__('El pedido ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The orderstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El pedido no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -89,11 +89,11 @@ class OrderstableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $orderstable = $this->Orderstable->patchEntity($orderstable, $this->request->getData());
             if ($this->Orderstable->save($orderstable)) {
-                $this->Flash->success(__('The orderstable has been saved.'));
+                $this->Flash->success(__('El pedido ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The orderstable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El pedido no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('orderstable'));
     }
@@ -116,10 +116,10 @@ class OrderstableController extends AppController
         $orderstable = $this->Orderstable->get($id);
         $this->Authorization->authorize($orderstable);
         if ($this->Orderstable->delete($orderstable)) {
-            $this->Flash->success(__('The orderstable has been deleted.'));
+            $this->Flash->success(__('El pedido ha sido eliminado exitosamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The orderstable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El pedido no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){

@@ -5,20 +5,20 @@
  */
 ?>
 <div class="costumerstable index content">
-    <?= $this->Html->link(__('New Costumerstable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Costumerstable') ?></h3>
+    <?= $this->Html->link(__('Nuevo Cliente'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Clientes') ?></h3>
     <div class="table-responsive">
     <h3>
-        <a href="http://localhost:8765/users/home" tarjet="_blank">Regresar</a>
+    <?= $this->Html->link(__('Regresar'), [ 'controller' => 'Users', 'action' => 'home'], ['class' => 'button float-right']) ?>
     </h3>
         <table>
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('costumer_id') ?></th>
-                    <th><?= $this->Paginator->sort('costumer_names') ?></th>
-                    <th><?= $this->Paginator->sort('costumer_addresses') ?></th>
-                    <th><?= $this->Paginator->sort('costumer_phones') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+            <tr>
+                    <th><?= $this->Paginator->sort('costumer_id', ['label' => 'Id']) ?></th>
+                    <th><?= $this->Paginator->sort('costumer_names',['label' => 'Nombre']) ?></th>
+                    <th><?= $this->Paginator->sort('costumer_addresses',['label' => 'Dirección']) ?></th>
+                    <th><?= $this->Paginator->sort('costumer_phones',['label' => 'Teléfono']) ?></th>
+                    <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,9 +29,9 @@
                     <td><?= h($costumerstable->costumer_addresses) ?></td>
                     <td><?= $this->Number->format($costumerstable->costumer_phones) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $costumerstable->costumer_id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $costumerstable->costumer_id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $costumerstable->costumer_id], ['confirm' => __('Are you sure you want to delete # {0}?', $costumerstable->costumer_id)]) ?>
+                        <?= $this->Html->link(__('Ver'), ['action' => 'view', $costumerstable->costumer_id]) ?>
+                        <?= $this->Html->link(__('Editar'), ['action' => 'edit', $costumerstable->costumer_id]) ?>
+                        <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $costumerstable->costumer_id], ['confirm' => __('Está seguro de querer eliminar el cliente # {0}?', $costumerstable->costumer_id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -41,11 +41,10 @@
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
+        <p><?= $this->Paginator->counter(__('Pagina {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')) ?></p>
 </div>

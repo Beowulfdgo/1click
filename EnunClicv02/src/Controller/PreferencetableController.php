@@ -57,11 +57,11 @@ class PreferencetableController extends AppController
             $preferencetable = $this->Preferencetable->patchEntity($preferencetable, $this->request->getData());
             $preferencetable->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Preferencetable->save($preferencetable)) {
-                $this->Flash->success(__('The preferencetable has been saved.'));
+                $this->Flash->success(__('El cliente preferido ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The preferencetable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El cliente preferido no se ha guardado exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){
@@ -89,11 +89,11 @@ class PreferencetableController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $preferencetable = $this->Preferencetable->patchEntity($preferencetable, $this->request->getData());
             if ($this->Preferencetable->save($preferencetable)) {
-                $this->Flash->success(__('The preferencetable has been saved.'));
+                $this->Flash->success(__('El cliente preferido ha sido guardado exitosamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The preferencetable could not be saved. Please, try again.'));
+            $this->Flash->error(__('El cliente preferido no se ha guardado exitosamente. Intente de nuevo.'));
         }
         $this->set(compact('preferencetable'));
     }
@@ -116,10 +116,10 @@ class PreferencetableController extends AppController
         $preferencetable = $this->Preferencetable->get($id);
         $this->Authorization->authorize($preferencetable);
         if ($this->Preferencetable->delete($preferencetable)) {
-            $this->Flash->success(__('The preferencetable has been deleted.'));
+            $this->Flash->success(__('El cliente preferido ha sido eliminado exitosamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The preferencetable could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El cliente preferido no se eliminó exitosamente. Intente de nuevo.'));
         }
     }
     catch(\Exception $e){

@@ -5,21 +5,21 @@
  */
 ?>
 <div class="dailyregisterstable index content">
-    <?= $this->Html->link(__('New Dailyregisterstable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Dailyregisterstable') ?></h3>
+    <?= $this->Html->link(__('Nuevo Registro Diario'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Registro Diario') ?></h3>
     <div class="table-responsive">
     <h3>
-        <a href="http://localhost:8765/users/home" tarjet="_blank">Regresar</a>
+    <?= $this->Html->link(__('Regresar'), [ 'controller' => 'Users', 'action' => 'home'], ['class' => 'button float-right']) ?>
     </h3>
         <table>
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('register_id') ?></th>
-                    <th><?= $this->Paginator->sort('register_status') ?></th>
-                    <th><?= $this->Paginator->sort('daily_initial_cashes') ?></th>
-                    <th><?= $this->Paginator->sort('daily_final_cashes') ?></th>
-                    <th><?= $this->Paginator->sort('register_dates') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+            <tr>
+                    <th><?= $this->Paginator->sort('register_id',['label' => 'Id']) ?></th>
+                    <th><?= $this->Paginator->sort('register_status',['label' => 'Estado']) ?></th>
+                    <th><?= $this->Paginator->sort('daily_initial_cashes',['label' => 'Caja Inicial']) ?></th>
+                    <th><?= $this->Paginator->sort('daily_final_cashes',['label' => 'Caja Final']) ?></th>
+                    <th><?= $this->Paginator->sort('register_dates',['label' => 'Fecha']) ?></th>
+                    <th class="actions"><?= __('Acciones ') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -31,9 +31,9 @@
                     <td><?= $dailyregisterstable->daily_final_cashes === null ? '' : $this->Number->format($dailyregisterstable->daily_final_cashes) ?></td>
                     <td><?= h($dailyregisterstable->register_dates) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $dailyregisterstable->register_id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $dailyregisterstable->register_id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $dailyregisterstable->register_id], ['confirm' => __('Are you sure you want to delete # {0}?', $dailyregisterstable->register_id)]) ?>
+                        <?= $this->Html->link(__('Ver'), ['action' => 'view', $dailyregisterstable->register_id]) ?>
+                        <?= $this->Html->link(__('Editar'), ['action' => 'edit', $dailyregisterstable->register_id]) ?>
+                        <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $dailyregisterstable->register_id], ['confirm' => __('Está seguro de querer eliminar el registro diario # {0}?', $dailyregisterstable->register_id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -43,11 +43,12 @@
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+        <p><?= $this->Paginator->counter(__('Pagina {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')) ?></p>
+</div>
     </div>
 </div>
