@@ -1,0 +1,262 @@
+2022-06-17 16:38:14 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 16:39:11 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 16:51:48 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:08:51 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:32:18 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:33:15 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:40:32 error: [Cake\Database\Exception\DatabaseException] Cannot describe all}. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:40:36 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:41:13 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:45:51 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:50:57 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:51:42 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 17:58:52 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 18:01:59 error: [Cake\Database\Exception\DatabaseException] Cannot describe roles. It has 0 columns. in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 120
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Table.php:513
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:111
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelCommand.php:94
+- C:\Solopruebas\1cl\vendor\cakephp\bake\src\Command\ModelAllCommand.php:89
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\1cl\bin\cake.php:12
+
+
+
+2022-06-17 18:24:32 warning: Warning (512): Association property name "role" clashes with field of same name of table "users". You should explicitly specify the "propertyName" option. in [C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Association.php, line 605]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 185
+Cake\ORM\Association::getProperty() - CORE\src\ORM\Association.php, line 605
+Bake\Command\ModelCommand::getEntityPropertySchema() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 595
+Bake\Command\ModelCommand::getTableContext() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 163
+Bake\Command\ModelCommand::bake() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 112
+Bake\Command\ModelCommand::execute() - ROOT\vendor\cakephp\bake\src\Command\ModelCommand.php, line 94
+Bake\Command\ModelAllCommand::execute() - ROOT\vendor\cakephp\bake\src\Command\ModelAllCommand.php, line 89
+Cake\Console\BaseCommand::run() - CORE\src\Console\BaseCommand.php, line 179
+Cake\Console\CommandRunner::runCommand() - CORE\src\Console\CommandRunner.php, line 334
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 172
+[main] - ROOT\bin\cake.php, line 12
+
+2022-06-21 22:12:59 error: [Twig\Error\RuntimeError] An exception has been thrown during the rendering of a template ("The existing `Zones` association on `ZonesDeliveries` is incompatible with the `Zones` association on `Deliveries`"). in C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\templates\bake\element\Controller/view.twig on line 19
+Stack Trace:
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:367
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:379
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\TemplateWrapper.php:40
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\View\TwigView.php:301
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1138
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1673
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:660
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\Twig\Extension\ViewExtension.php:46
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Environment.php(358) : eval()'d code:179
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:394
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:367
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:379
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\TemplateWrapper.php:40
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\View\TwigView.php:301
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1138
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\View\BakeView.php:84
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Utility\TemplateRenderer.php:101
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:183
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:154
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:65
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerAllCommand.php:74
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\bin\cake.php:12
+
+Caused by: [InvalidArgumentException] The existing `Zones` association on `ZonesDeliveries` is incompatible with the `Zones` association on `Deliveries` in C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\ORM\Association\BelongsToMany.php on line 420
+Stack Trace:
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\ORM\Association\BelongsToMany.php:300
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Utility\Model\AssociationFilter.php:52
+- array_map - [internal], line ??- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Utility\Model\AssociationFilter.php:55
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Utility\Model\AssociationFilter.php:38
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\View\Helper\BakeHelper.php:472
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\View\Helper\BakeHelper.php:184
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Extension\CoreExtension.php:1607
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Environment.php(358) : eval()'d code:46
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:394
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:367
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:379
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\TemplateWrapper.php:40
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\View\TwigView.php:301
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1138
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1673
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:660
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\Twig\Extension\ViewExtension.php:46
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Environment.php(358) : eval()'d code:179
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:394
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:367
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\Template.php:379
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\twig\twig\src\TemplateWrapper.php:40
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\twig-view\src\View\TwigView.php:301
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\View\View.php:1138
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\View\BakeView.php:84
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Utility\TemplateRenderer.php:101
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:183
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:154
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerCommand.php:65
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\bake\src\Command\ControllerAllCommand.php:74
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\BaseCommand.php:179
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\CommandRunner.php:334
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Console\CommandRunner.php:172
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\bin\cake.php:12
+
+
+

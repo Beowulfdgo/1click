@@ -1,0 +1,190 @@
+2022-06-17 18:26:11 error: [PDOException] SQLSTATE[42712]: Duplicate alias: 7 ERROR:  table name "roles" specified more than once in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 180
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php:75
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:337
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php:70
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:340
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Query.php:250
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1148
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php:288
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1096
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\Paginator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php:184
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:856
+- C:\Solopruebas\1cl\src\Controller\RolesController.php:24
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Solopruebas\1cl\webroot\index.php:40
+
+Request URL: /roles
+
+
+2022-06-17 18:28:09 error: [PDOException] SQLSTATE[42712]: Duplicate alias: 7 ERROR:  table name "roles" specified more than once in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 180
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php:75
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:337
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php:70
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:340
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Query.php:250
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1148
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php:288
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1096
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\Paginator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php:184
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:856
+- C:\Solopruebas\1cl\src\Controller\RolesController.php:24
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Solopruebas\1cl\webroot\index.php:40
+
+Request URL: /roles
+
+
+2022-06-17 18:28:35 error: [PDOException] SQLSTATE[42712]: Duplicate alias: 7 ERROR:  table name "roles" specified more than once in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 180
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php:75
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:337
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php:70
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:340
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Query.php:250
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1148
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php:288
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1096
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\Paginator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php:184
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:856
+- C:\Solopruebas\1cl\src\Controller\RolesController.php:24
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Solopruebas\1cl\webroot\index.php:40
+
+Request URL: /roles
+
+
+2022-06-17 18:29:01 error: [PDOException] SQLSTATE[42712]: Duplicate alias: 7 ERROR:  table name "roles" specified more than once in C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 180
+Stack Trace:
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php:75
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:337
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php:70
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Connection.php:340
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Database\Query.php:250
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1148
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php:288
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\ORM\Query.php:1096
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Datasource\Paginator.php:180
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php:184
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:856
+- C:\Solopruebas\1cl\src\Controller\RolesController.php:24
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\Controller.php:539
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\BaseApplication.php:317
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Solopruebas\1cl\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Solopruebas\1cl\webroot\index.php:40
+
+Request URL: /roles
+
+
+2022-06-21 21:34:48 error: [Cake\Http\Exception\MissingControllerException] Controller class Adstable could not be found. in C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 349
+Exception Attributes: array (
+  'class' => 'Adstable',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:74
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\BaseApplication.php:315
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:77
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:174
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:161
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:126
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:73
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Runner.php:58
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\vendor\cakephp\cakephp\src\Http\Server.php:90
+- C:\Solopruebas\Proyecto a subir a git\EnunClicv04\webroot\index.php:40
+
+Request URL: /adstable
+
+

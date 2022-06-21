@@ -1,0 +1,32 @@
+<?php
+declare(strict_types=1);
+
+namespace App\Test\Fixture;
+
+use Cake\TestSuite\Fixture\TestFixture;
+
+/**
+ * DailyregistersFixture
+ */
+class DailyregistersFixture extends TestFixture
+{
+    /**
+     * Init method
+     *
+     * @return void
+     */
+    public function init(): void
+    {
+        $this->records = [
+            [
+                'register_id' => 1,
+                'register_status' => 'Lorem ipsum dolor sit amet',
+                'daily_initial_cashes' => 1,
+                'daily_final_cashes' => 1,
+                'register_dates' => '2022-06-21',
+                'deliverymans_id' => 1,
+            ],
+        ];
+        parent::init();
+    }
+}
